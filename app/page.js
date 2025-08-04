@@ -117,7 +117,7 @@ export default function HomePage() {
           </h2>
           <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
             Everything you need to track time efficiently, manage projects
-            effectively, and gain insights into your team's productivity.
+            effectively, and gain insights into your teams productivity.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

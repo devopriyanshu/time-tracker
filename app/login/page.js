@@ -221,7 +221,7 @@ export default function LoginPage() {
 
         {/* Signup Options */}
         <div className="mt-8 text-center">
-          <p className="text-gray-600 mb-6">Don't have an account?</p>
+          <p className="text-gray-600 mb-6">Dont have an account?</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={() => router.push("/signup?role=USER")}

@@ -127,7 +127,9 @@ export default function SignupPage() {
 
         {/* Role Features */}
         <div className="bg-white rounded-2xl shadow-sm p-6 mb-6 border border-gray-100">
-          <h3 className="font-semibold text-gray-900 mb-3">What you'll get:</h3>
+          <h3 className="font-semibold text-gray-900 mb-3">
+            What you will get:
+          </h3>
           <div className="grid grid-cols-2 gap-2">
             {roleInfo.features.map((feature, index) => (
               <div

@@ -749,7 +749,7 @@ export default function AdminDashboard() {
                 No logs found
               </h3>
               <p className="text-gray-500">
-                Apply filters and click "Apply Filters" to view time logs
+                Apply filters and click Apply Filters to view time logs
               </p>
             </div>
           )}
