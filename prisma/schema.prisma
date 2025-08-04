@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String   @unique
+  password  String
+  role      Role     @default(USER)
+  logs      TimeLog[]
+  projects  Project[] @relation("AssignedProjects")
+}
+
+model Project {
+  id        String     @id @default(cuid())
+  name      String
+  users     User[]     @relation("AssignedProjects")
+  timeLogs  TimeLog[]
+}
+
+model TimeLog {
+  id          String   @id @default(cuid())
+  user        User     @relation(fields: [userId], references: [id])
+  userId      String
+  project     Project  @relation(fields: [projectId], references: [id])
+  projectId   String
+  startTime   DateTime
+  endTime     DateTime
+  description String
+  duration    Int      // in minutes
+  createdAt   DateTime @default(now())
+}
+
+enum Role {
+  ADMIN
+  USER
+}
