@@ -6,15 +6,12 @@ import prisma from "@/lib/prisma";
 export async function GET() {
   try {
     const user = await getSessionUser();
+
     if (user?.role !== "ADMIN")
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
+    // Fetch all projects for admin
     const projects = await prisma.project.findMany({
-      where: {
-        users: {
-          some: { id: user.id },
-        },
-      },
       select: {
         id: true,
         name: true,

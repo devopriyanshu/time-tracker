@@ -18,10 +18,6 @@ export default function UserDashboard() {
     }
   }, [status, router]);
 
-  if (status === "loading") {
-    return <div className="p-6">Loading...</div>;
-  }
-
   const user = session?.user;
 
   if (user?.role !== "USER") {
@@ -40,7 +36,7 @@ export default function UserDashboard() {
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              Welcome back, {user.name || user.email}
+              Welcome {user.name || "to User Dashboard"}
             </h1>
             <p className="text-gray-600">
               Track your time and manage your work logs
@@ -50,7 +46,7 @@ export default function UserDashboard() {
             onClick={() => signOut({ callbackUrl: "/login" })}
             className="mt-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded"
           >
-            Logout
+            Signout
           </button>
         </div>
 
