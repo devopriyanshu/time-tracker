@@ -12,7 +12,7 @@ export default function HomePage() {
         Track your work time efficiently. Admins can manage projects, users log
         time manually or with a live timer.
       </p>
-      <div className="flex-col gap-4">
+      <div className="flex gap-4">
         <button onClick={() => router.push("/login")} className="btn">
           Login
         </button>

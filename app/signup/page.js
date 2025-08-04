@@ -1,12 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 export default function SignupPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const role = searchParams.get("role") || "USER"; // default to 'user'
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,7 +30,7 @@ export default function SignupPage() {
 
     const res = await fetch("/api/register", {
       method: "POST",
-      body: JSON.stringify(formData),
+      body: JSON.stringify({ ...formData, role }), // include role
       headers: {
         "Content-Type": "application/json",
       },
@@ -39,11 +42,26 @@ export default function SignupPage() {
       return;
     }
 
-    await signIn("credentials", {
+    const signInRes = await signIn("credentials", {
+      redirect: false,
       email: formData.email,
       password: formData.password,
-      callbackUrl: "/dashboard/user",
     });
+
+    if (signInRes?.ok) {
+      const sessionRes = await fetch("/api/auth/session");
+      const session = await sessionRes.json();
+
+      const userRole = session?.user?.role;
+
+      if (userRole === "ADMIN") {
+        router.push("/dashboard/admin");
+      } else {
+        router.push("/dashboard/user");
+      }
+    } else {
+      setError("Invalid login after registration");
+    }
   };
 
   return (
