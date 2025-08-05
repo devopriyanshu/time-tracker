@@ -20,16 +20,6 @@ export default function UserDashboard() {
 
   const user = session?.user;
 
-  if (user?.role !== "USER") {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <p className="text-red-600 text-lg">
-          Access denied. Admin users should use the admin dashboard.
-        </p>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-7xl mx-auto">
