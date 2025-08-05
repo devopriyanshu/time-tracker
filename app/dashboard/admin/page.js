@@ -131,7 +131,7 @@ export default function AdminDashboard() {
       );
       const userNames = selectedUsers.map((user) => user.name);
 
-      const response = await await axios.patch(
+      const response = await axios.patch(
         `/api/projects/${assignData.projectId}/assign`,
         {
           userIds: assignData.selectedUserIds,
@@ -143,8 +143,7 @@ export default function AdminDashboard() {
       );
       setAssignData({ projectId: "", selectedUserIds: [] });
 
-      // Optionally refresh projects list to show updated assignments
-      // fetchInitialData();
+      await fetchInitialData();
     } catch (error) {
       const errorMessage = error.response?.data?.error || "Assignment failed";
       toast.error(errorMessage);
