@@ -1,33 +1,40 @@
 # ⏱️ Time Tracker App
 
-A full-stack web application to log work hours, manage projects, and monitor productivity. Built using **Next.js (App Router)**, **PostgreSQL**, **Prisma**, and **Tailwind CSS**.
-
-## 🧩 Features
-
-- User Authentication (NextAuth.js or JWT-based)
-- Role-based Dashboards (Admin and Regular Users)
-- Manual and Live Time Logging
-- Project Assignment by Admin
-- Time Summaries filtered by user/project
-- Responsive UI with Tailwind CSS
+A full-stack time tracking web application built with **Next.js (App Router)**, **Prisma**, **PostgreSQL**, and **Tailwind CSS**. It supports **Admin** and **User** roles, allowing users to track their time with manual entries or live timers, and providing admins with detailed time log summaries and project/user management.
 
 ---
+
+## 🔥 Features
+
+### 👤 Authentication
+- Secure login using **NextAuth.js**
+- Session management with role-based access (Admin / User)
+
+### 🧑‍💼 Admin Dashboard
+- Create and manage **projects**
+- Assign users to projects
+- View time logs filtered by **user** or **project**
+- Summary cards showing total hours, users, and active projects
+
+### 🧑‍💻 User Dashboard
+- **Live Timer**: Start, pause, and stop timers
+- **Manual Entry**: Add time logs manually for specific projects
+- View logs filtered by day/week
+- Track personal work history and durations
+
+### 🧱 Tech Stack
+- **Frontend**: Next.js App Router, Tailwind CSS
+- **Backend**: Prisma ORM, PostgreSQL
+- **Authentication**: NextAuth.js
+- **Deployment**: Vercel
+
+---
+
 
 ## 🚀 Live Demo
 
-[Click here to view live demo](https://your-live-url.vercel.app)  
+[Click here to view live demo]([https://your-live-url.vercel.app](https://time-tracker-rho-sandy.vercel.app/))  
 *(Replace with your actual deployed URL)*
-
----
-
-## 🛠️ Tech Stack
-
-- **Frontend**: Next.js (App Router), React, Tailwind CSS
-- **Backend**: Next.js API Routes
-- **Database**: PostgreSQL
-- **ORM**: Prisma
-- **Auth**: NextAuth.js or JWT
-- **Hosting**: Vercel
 
 ---
 
