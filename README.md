@@ -33,8 +33,8 @@ A full-stack time tracking web application built with **Next.js (App Router)**, 
 
 ## 🚀 Live Demo
 
-[Click here to view live demo]([https://your-live-url.vercel.app](https://time-tracker-rho-sandy.vercel.app/))  
-*(Replace with your actual deployed URL)*
+[Click here to view live demo](https://time-tracker-rho-sandy.vercel.app/)
+
 
 ---
 
