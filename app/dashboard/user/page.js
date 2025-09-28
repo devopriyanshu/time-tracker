@@ -45,7 +45,7 @@ export default function UserDashboard() {
             <h2 className="text-xl font-semibold mb-4 text-gray-800">
               Live Timer
             </h2>
-            <Timer userId={user.id} />
+            <Timer userId={user?.id} />
           </div>
 
           <div className="bg-white rounded-lg shadow-md p-6">
