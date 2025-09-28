@@ -52,7 +52,7 @@ export default function UserDashboard() {
             <h2 className="text-xl font-semibold mb-4 text-gray-800">
               Manual Time Entry
             </h2>
-            <LogForm userId={user.id} />
+            <LogForm userId={user?.id} />
           </div>
         </div>
 
