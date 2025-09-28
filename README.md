@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ⏱️ Time Tracker App
 
-## Getting Started
+A full-stack time tracking web application built with **Next.js (App Router)**, **Prisma**, **PostgreSQL**, and **Tailwind CSS**. It supports **Admin** and **User** roles, allowing users to track their time with manual entries or live timers, and providing admins with detailed time log summaries and project/user management.
 
-First, run the development server:
+---
+
+## 🔥 Features
+
+### 👤 Authentication
+- Secure login using **NextAuth.js**
+- Session management with role-based access (Admin / User)
+
+### 🧑‍💼 Admin Dashboard
+- Create and manage **projects**
+- Assign users to projects
+- View time logs filtered by **user** or **project**
+- Summary cards showing total hours, users, and active projects
+
+### 🧑‍💻 User Dashboard
+- **Live Timer**: Start, pause, and stop timers
+- **Manual Entry**: Add time logs manually for specific projects
+- View logs filtered by day/week
+- Track personal work history and durations
+
+### 🧱 Tech Stack
+- **Frontend**: Next.js App Router, Tailwind CSS
+- **Backend**: Prisma ORM, PostgreSQL
+- **Authentication**: NextAuth.js
+- **Deployment**: Vercel
+
+---
+
+
+## 🚀 Live Demo
+
+[Click here to view live demo](https://time-tracker-rho-sandy.vercel.app/)
+
+
+---
+
+## 📦 Setup Instructions
+
+### 1. Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/time-tracker-app.git
+cd time-tracker-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
+```bash
+npm install
+```
+### 3. Set Up Environment Variables
+```bash
+cp .env.example .env
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 4. Generate Prisma Client
+```bash
+npx prisma generate
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 5. Run DEV server
+```bash
+npm run dev
+```
