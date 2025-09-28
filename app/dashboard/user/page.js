@@ -62,7 +62,7 @@ export default function UserDashboard() {
               Your Time Logs
             </h2>
           </div>
-          <TimeLogsList userId={user.id} />
+          <TimeLogsList userId={user?.id} />
         </div>
       </div>
     </div>
