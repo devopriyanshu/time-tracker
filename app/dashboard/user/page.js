@@ -26,7 +26,7 @@ export default function UserDashboard() {
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              Welcome {user.name || "to User Dashboard"}
+              Welcome {user?.name || "to User Dashboard"}
             </h1>
             <p className="text-gray-600">
               Track your time and manage your work logs
